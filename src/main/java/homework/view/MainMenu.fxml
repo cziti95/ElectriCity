@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: BLACK;" stylesheets="@DarkButtonTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homework.view.MainMenuController">
+   <children>
+      
+      <Button fx:id="newGame" layoutX="452.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleNewGame" prefWidth="120.0" text="Új játék">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="Rules" layoutX="442.0" layoutY="480.0" mnemonicParsing="false" onAction="#handleRulesButton" prefWidth="140.0" text="Szabályzat">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="Exit" layoutX="452.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleExitButton" prefWidth="120.0" text="Kilépés">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="170.0" fitWidth="605.0" layoutX="210.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="logo.png" />
+         </image>
+         <effect>
+            <Blend />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

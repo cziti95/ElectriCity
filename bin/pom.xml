@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>unideb.homework</groupId>
+  <artifactId>Electricity</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>Electricity</name>
+  <url>http://maven.apache.org</url>
+  <description>
+  	A célunk a játékban az, hogy ellásuk árammal az adott városokat. Egy áramfejlesztőnek van 1 maximum kapacitása amennyi energiát képes leadni a különböző
+  	városoknak pedig 1 energia igényük, méretüktől függően. Az összeköttetés villanypóznákkal valósulna meg melyek mérete a szükséges energiától függ. 
+  	Túl sok energia igénynél az áramfejelsztő erejét generátorokkal lehet erősíteni. 
+  </description>
+  <developers>
+  	<developer>
+  		<name>Czirják Tibor</name>
+  		<email>cziti95@gmail.com</email>
+  	</developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+ <dependencies>
+  <dependency>
+   <groupId>org.mockito</groupId>
+   <artifactId>mockito-all</artifactId>
+   <version>1.8.4</version>
+  </dependency>
+  <dependency>
+   <groupId>junit</groupId>
+   <artifactId>junit</artifactId>
+   <version>3.8.1</version>
+   <scope>test</scope>
+  </dependency>
+  </dependencies>
+ 
+ <build>
+ 	<plugins>
+ 	 <plugin>
+   		 <groupId>org.apache.maven.plugins</groupId>
+   	 	 <artifactId>maven-compiler-plugin</artifactId>
+   		 <version>3.3</version>
+   		 <configuration>
+       		 <source>1.8</source>
+       		 <target>1.8</target>
+   		 </configuration>
+	 </plugin>
+	 <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-assembly-plugin</artifactId>
+		<version>3.0.0</version>
+		<executions>
+			<execution>
+			<goals>
+				<goal>single</goal>
+			</goals>
+				<phase>package</phase>
+			<configuration>
+				<archive>
+				<manifest>
+					<mainClass>${MainApp}</mainClass>
+				</manifest>
+				</archive>
+				<descriptorRefs>
+					<descriptorRef>jar-with-dependencies</descriptorRef>
+				</descriptorRefs>
+			</configuration>
+			</execution>
+		</executions>
+		</plugin>
+ 	</plugins>
+ </build>
+</project>
