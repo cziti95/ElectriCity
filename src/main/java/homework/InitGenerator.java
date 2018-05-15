@@ -3,7 +3,7 @@ package homework;
 import homework.model.Generator;
 import homework.model.PowerGenerator;
 import javafx.scene.canvas.Canvas;
-
+import org.pmw.tinylog.Logger;
 /**
  * Osztály a generátorok generáláshoz.
  * 
@@ -32,6 +32,7 @@ public class InitGenerator {
 	 */
 	public InitGenerator(double canvas, PowerGenerator powerGenerator, int id) {
 		super();
+		Logger.info("Generátor generálva.");
 		this.generator.setGeneratorID(id);
 		this.generator.setPlusEnergy(350);
 		this.generator.setPositionX((canvas / 2) - powerGenerator.getWidth() - id * 64);

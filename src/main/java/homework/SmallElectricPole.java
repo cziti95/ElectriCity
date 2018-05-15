@@ -1,10 +1,10 @@
 package homework;
 
 import java.util.List;
-
 import homework.model.ElectricPole;
 import homework.model.PowerGenerator;
 import javafx.scene.canvas.Canvas;
+import org.pmw.tinylog.Logger;
 
 /**
  * Osztály a kis villanyoszlopok generálásához.
@@ -13,6 +13,7 @@ import javafx.scene.canvas.Canvas;
  *
  */
 public class SmallElectricPole {
+
 	/**
 	 * A kis villanyoszlopok tárolásához.
 	 */
@@ -37,7 +38,7 @@ public class SmallElectricPole {
 	public SmallElectricPole(Canvas canvas, PowerGenerator powerGenerator, int id, int direction,
 			List<ElectricPole> smallElectricPoleList) {
 		super();
-
+		Logger.info("Kis villanyoszlop generálva.");
 		ElectricPole previouslyPole = new ElectricPole();
 
 		smallElectricPole.setImage("small_electric _pole.png");

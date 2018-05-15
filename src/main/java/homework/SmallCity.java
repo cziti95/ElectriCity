@@ -3,14 +3,13 @@ package homework;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+import org.pmw.tinylog.Logger;
 import homework.model.City;
 
 /**
- * Osztály a kisvárosok generáláshoz
+ * Osztály a kisvárosok generáláshoz.
  * 
  * @author czirjak
- *
  */
 public class SmallCity {
 	/**
@@ -34,7 +33,7 @@ public class SmallCity {
 	 * @param number_of_small_citys - a szükséges kisvárosok darabszáma
 	 */
 	public SmallCity(double canvasW, double canvasH,double pgH, int number_of_small_citys) {
-
+		Logger.info("Kisváros generálva.");
 		double px, py, tmpx, tmpy;
 		Random r = new Random();
 		City act = new City();

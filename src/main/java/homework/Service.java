@@ -2,7 +2,7 @@ package homework;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-
+import org.pmw.tinylog.Logger;
 /**
  * Segédosztály a játék kezdeti értékeinek beállításához.
  * 
@@ -254,6 +254,7 @@ public class Service {
 	 * @param gc - az aktuális graphicscontext
 	 */
 	public void writeGameOver(GraphicsContext gc) {
+		Logger.info("Játék vége!");
 		String gameover = ("GAME OVER");
 
 		gc.setFill(Color.RED);

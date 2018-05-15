@@ -2,7 +2,7 @@ package homework;
 
 import homework.model.PowerGenerator;
 import javafx.scene.canvas.Canvas;
-
+import org.pmw.tinylog.Logger;
 /**
  * Osztály az áramfejlesztő generálásához.
  * 
@@ -29,6 +29,7 @@ public class InitPowerGenerator {
 	 */
 	public InitPowerGenerator(double canvas) {
 		super();
+		Logger.info("Áramfejlesztő legenerálva!");
 		this.powerGenerator.setPositionX((canvas / 2) - 64);
 		this.powerGenerator.setPositionY(0);
 		this.powerGenerator.setMaxEnegryGenerate(700);

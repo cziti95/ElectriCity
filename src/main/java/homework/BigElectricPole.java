@@ -4,6 +4,7 @@ import java.util.List;
 
 import homework.model.ElectricPole;
 import homework.model.PowerGenerator;
+import org.pmw.tinylog.Logger;
 import javafx.scene.canvas.Canvas;
 
 /**
@@ -39,7 +40,7 @@ public class BigElectricPole {
 	public BigElectricPole(double canvasW, PowerGenerator powerGenerator, int id, int direction,
 			List<ElectricPole> bigElectricPoleList) {
 		super();
-
+		Logger.info("Nagy villanyoszlop generálva.");
 		ElectricPole previouslyPole = new ElectricPole();
 
 		bigElectricPole.setImage("big_electric_pole.png");

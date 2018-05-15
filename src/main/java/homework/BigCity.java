@@ -3,7 +3,7 @@ package homework;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+import org.pmw.tinylog.Logger;
 import homework.model.City;
 
 /**
@@ -37,7 +37,7 @@ public class BigCity {
 	 * @param number_of_big_citys - a nagyvárosok száma
 	 */
 	public BigCity(double canvasW, double canvasH,double pgH, int number_of_big_citys) {
-
+		Logger.info("Nagyváros generálva.");
 		double px, py, tmpx,tmpy;
 		Random r = new Random();
 		City act = new City();

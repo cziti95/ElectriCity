@@ -59,8 +59,7 @@ public class Initialization {
 	}
 
 	/**
-	 *
-	 * @param numberofBigCitys- Beállítja a nagy városok számát.
+	 * @param numberofBigCitys - Beállítja a nagy városok számát.
 	 */
 	public void setNumberofBigCitys(int numberofBigCitys) {
 		this.numberofBigCitys = numberofBigCitys;
@@ -229,7 +228,7 @@ public class Initialization {
 
 	/**
 	 * Beállítja a kis működő városokat.
-	 * @param smallLightenedCitys
+	 * @param smallLightenedCitys - kis működő városok listája.
 	 */
 	public void setSmallLightenedCitys(List<City> smallLightenedCitys) {
 		this.smallLightenedCitys = smallLightenedCitys;
@@ -237,7 +236,7 @@ public class Initialization {
 
 	/**
 	 * Beállítja a nagy működő városokat.
-	 * @param bigLightenedCitys
+	 * @param bigLightenedCitys - nagy működő városok listája.
 	 */
 	public void setBigLightenedCitys(List<City> bigLightenedCitys) {
 		this.bigLightenedCitys = bigLightenedCitys;
@@ -254,7 +253,7 @@ public class Initialization {
 
 	/**
 	 * Áramfejlesztő kirajzolása.
-	 * @param gc
+	 * @param gc - az adott graphicsContext.
 	 */
 	public void PowerGeneratorView(GraphicsContext gc){
 		powerGenerator.render(gc);
@@ -262,7 +261,7 @@ public class Initialization {
 
 	/**
 	 * Esetlegesen túltöltött áramfejlesztő kirajzolása.
-	 * @param gc
+	 * @param gc - az adott graphicsContext.
 	 */
 	public void PowerGeneratorOverloadedView(GraphicsContext gc){
 		powerGenerator.renderOverloaded(gc);
@@ -282,7 +281,7 @@ public class Initialization {
 
 	/**
 	 * Ha szükséges, akkor kirajzol plusz generátorokat.
-	 * @param gc
+	 * @param gc - az adott graphicsContext.
 	 */
 	public void GeneratorsView(GraphicsContext gc){
 		if(!generatorList.isEmpty())
@@ -360,7 +359,7 @@ public class Initialization {
 
 	/**
 	 ** Nagy városok vizsgálat, hogy elért-e már hozzájuk esetleg egy villanyoszlop(kicsi).
-	 * @return
+	 * @return - annak a vizsgálatnak az eredménye, hogy nagy városba ütköztünk-e kis oszlopppal.
 	 */
 	public boolean initBigCitysOnBySmallElectricPole(){
 		if(lightningController.BigCityReachedwithSmallPole(bigCityList, smallElectricPoleList) == 1){
@@ -413,7 +412,7 @@ public class Initialization {
 	}
 
 	/**
-	 * Nagy villanyoszlopok letétele
+	 * Nagy villanyoszlopok letétele.
 	 * @param direction - melyik irányba tegye le a villanyoszlopot
 	 */
 	public void initBigElectricPole(int direction){

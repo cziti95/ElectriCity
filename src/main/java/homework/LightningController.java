@@ -3,9 +3,10 @@ package homework;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+import org.pmw.tinylog.Logger;
 import homework.model.City;
 import homework.model.ElectricPole;
+import sun.rmi.runtime.Log;
 
 /**
  * Osztály a kivilágítások kezeléséhez.
@@ -81,6 +82,7 @@ public class LightningController {
 				lastsmallPole = smallpole;
 				if ((Math.abs(small.getPositionX() - lastsmallPole.getPositionX()) < lastsmallPole.getWidth()) && (Math
 						.abs(small.getPositionY() - lastsmallPole.getPositionY()) < lastsmallPole.getHeight())) {
+					Logger.info("Kisváros árammal ellátva!");
 					smallLightenedCitys_tmp.add(small);
 				}
 			}
@@ -102,6 +104,7 @@ public class LightningController {
 				lastbigPole = bigPole;
 				if ((Math.abs(small.getPositionX() - lastbigPole.getPositionX()) < lastbigPole.getWidth())
 						&& (Math.abs(small.getPositionY() - lastbigPole.getPositionY()) < lastbigPole.getHeight())) {
+					Logger.info("Kisváros árammal ellátva!");
 					smallLightenedCitys_tmp.add(small);
 				}
 			}
@@ -128,6 +131,7 @@ public class LightningController {
 								.abs(big.getPositionY() + lastsmallPole.getPositionY()) < big.getHeight() / 2))) {
 
 					if (!(lastsmallPole.getCarryingCapacity() == big.getNecessaryEnergy())) {
+						Logger.info("Kis villanyoszloppal akartunk nagyváros kivilágítani --> Game Over");
 						lastsmallPole.setOverloaded(true);
 						return 1;
 					}
@@ -153,6 +157,7 @@ public class LightningController {
 				lastbigPole = bigPole;
 				if ((Math.abs(big.getPositionX() - lastbigPole.getPositionX()) < lastbigPole.getWidth())
 						&& (Math.abs(big.getPositionY() - lastbigPole.getPositionY()) < lastbigPole.getHeight())) {
+					Logger.info("Nagyváros árammal ellátva!");
 					bigLightenedCitys_tmp.add(big);
 				}
 			}

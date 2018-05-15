@@ -3,7 +3,7 @@ package homework.view;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
-
+import org.pmw.tinylog.Logger;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -344,6 +344,7 @@ public class GameController {
 				
 				if(service.getNumberofCitys() == service.getNumberofLightenedCitys()){
 					if(service.getActualAmountofUsedEnergy() <= service.getActualAmountofEnergy()){
+						Logger.info("Játéknak sikeresen vége.");
 						String wp = ("SZÉP MUNKA!");
 						
 						gc.setFill(Color.YELLOW);
@@ -399,7 +400,7 @@ public class GameController {
 	 * A játék aktuális állapotát menti az adatbázisba.
 	 */
 	public void saveGameStatetoFile(){
-				
+
 		try {
 			ClassLoader classLoader = getClass().getClassLoader();
 			File fileforCitys = new File(classLoader.getResource("database/savefile.xml").getFile());
@@ -414,8 +415,9 @@ public class GameController {
 			context = JAXBContext.newInstance(PoleLists.class);
 			m = context.createMarshaller();
 			m.marshal(poleLists, fileforPoles);
-			
+			Logger.info("Játék mentve!");
 		} catch (JAXBException e2) {
+			Logger.error("Játékot nem sikerült menteni!");
 			Alert alert = new Alert(AlertType.ERROR);
 	        alert.setTitle("Hiba");
 	        alert.setHeaderText("Nem lehet menteni az adatokat!");
@@ -476,8 +478,9 @@ public class GameController {
 			
 			service.setNumberofPoles(poleLists.getSmallElectricPoleList().size(),
 					poleLists.getBigElectricPoleList().size());
-
+			Logger.info("Játék sikeresen betölve!");
 		} catch (JAXBException e) {
+			Logger.error("Játékot nem sikerült betölteni!");
 			Alert alert = new Alert(AlertType.ERROR);
 	        alert.setTitle("Hiba");
 	        alert.setHeaderText("Nem lehet betölteni az adatokat!");

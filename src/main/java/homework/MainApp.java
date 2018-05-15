@@ -23,7 +23,6 @@ import org.pmw.tinylog.Logger;
  *
  */
 public class MainApp extends Application {
-
 	/**
 	 * Az aktuális stage.
 	 */
@@ -38,7 +37,6 @@ public class MainApp extends Application {
 	 */
 	public static void main(String[] args) {
 		launch(args);
-		Logger.info("Alkalmazás elindítva");
 	}
 
 	/**
@@ -62,6 +60,7 @@ public class MainApp extends Application {
 	 * Beállítja az alaprajzot.
 	 */
 	public void initRootLayout() {
+		Logger.info("Alapként szolgáló ablak beállítása.");
 		try {
 
 			FXMLLoader loader = new FXMLLoader(MainApp.class.getClassLoader().getResource("view/RootLayout.fxml"));
@@ -79,6 +78,7 @@ public class MainApp extends Application {
 			});
 
 		} catch (IOException e) {
+			Logger.error("Nem sikerült beállítani az alap layoutot!");
 			e.printStackTrace();
 		}
 
@@ -88,6 +88,7 @@ public class MainApp extends Application {
 	 * Mutatja a főmenüt.
 	 */
 	public void showMainMenu() {
+		Logger.info("Váltás a főmenüre.");
 		try {
 
 			FXMLLoader loader = new FXMLLoader();
@@ -100,6 +101,7 @@ public class MainApp extends Application {
 			controller.setMainApp(this);
 
 		} catch (IOException e) {
+			Logger.error("Nem sikerült a főmenü layout-ját betölteni!");
 			e.printStackTrace();
 		}
 
@@ -109,6 +111,7 @@ public class MainApp extends Application {
 	 * Mutatja a játékot.
 	 */
 	public void showGame() {
+		Logger.info("Váltás a játékra.");
 		try {
 
 			FXMLLoader loader = new FXMLLoader();
@@ -122,6 +125,7 @@ public class MainApp extends Application {
 			controller.startGame();
 
 		} catch (IOException e) {
+			Logger.error("Nem sikerült a játék layout-ját betölteni!");
 			e.printStackTrace();
 		}
 
@@ -131,6 +135,7 @@ public class MainApp extends Application {
 	 * Mutatja a szabályzatot.
 	 */
 	public void showRules() {
+		Logger.info("Váltás a szabályzatra.");
 		try {
 
 			FXMLLoader loader = new FXMLLoader();
@@ -143,6 +148,7 @@ public class MainApp extends Application {
 			controller.setMainApp(this);
 
 		} catch (IOException e) {
+			Logger.error("Nem sikerült a játék szabályzat layout-ját betölteni.");
 			e.printStackTrace();
 		}
 
@@ -159,6 +165,7 @@ public class MainApp extends Application {
 	 * Figyelmeztetés a program bezárásával kapcsolatban.
 	 */
 	public void closeProgram() {
+		Logger.info("Program bezárása.");
 		Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("Figyelmeztetés");
 		alert.setHeaderText("Biztos ki akarsz lépni?");

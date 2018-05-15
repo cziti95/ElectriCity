@@ -121,8 +121,7 @@ public class City {
 	}
 
 	/**
-	 *
-	 * @param width- beállítja a város szélességét.
+	 * @param width - beállítja a város szélességét.
 	 */
 	public void setWidth(double width) {
 		this.width = width;
